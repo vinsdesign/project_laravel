@@ -1,6 +1,6 @@
 <nav class="bg-gray-900" x-data="{ isOpen: false, isOpenMobile: false, isOn: false }">
 <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-    <div class="relative flex h-16 items-center justify-between">
+    <div class="relative z-50 flex h-16 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
             <!-- Mobile menu button-->
             <button type="button" @click="isOpenMobile = !isOpenMobile"
@@ -8,7 +8,7 @@
                 aria-controls="mobile-menu" aria-expanded="false">
                 <span class="absolute -inset-0.5"></span>
                 <span class="sr-only">Open main menu</span>
-                <svg :class="{ 'hidden': isOpenMobile, 'block': !isOpenMobile }" class="h-6 w-6" fill="none"
+                <svg :class="{ 'hidden': isOpenMobile, 'block': !isOpenMobile }" class=" h-6 w-6" fill="none"
                     viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -28,15 +28,13 @@
             <div class="hidden sm:ml-6 sm:block">
                 <div class="flex space-x-4">
                     <a href="#"
-                        :class="{ 'bg-gray-900 text-white': isOn, 'text-gray-300 hover:bg-gray-700 hover:text-white': !isOn }"
-                        class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
-                        aria-current="Home">Home</a>
+                       class="{{ request()-> is('/') ? 'bg-indigo-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}} cursor-pointer block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="Home">Home</a>
                     <a href="#"
-                        class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Blog</a>
+                        class=" {{ request()-> is('/blog') ? 'bg-indigo-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}} rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 cursor-pointer hover:text-white">Blog</a>
                     <a href="#"
-                        class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+                        class="{{ request()-> is('/about') ? 'bg-indigo-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}} rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 cursor-pointer hover:text-white">About</a>
                     <a href="#"
-                        class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
+                        class="{{ request()-> is('/contact') ? 'bg-indigo-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}} rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 cursor-pointer hover:text-white">Contact</a>
                 </div>
             </div>
         </div>
@@ -69,10 +67,10 @@
                     x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
                     x-transition:leave="transition ease-in duration-75 transform"
                     x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
-                    class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                    class="absolute right-0  10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                     role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                     <!-- Active: "bg-gray-100", Not Active: "" -->
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                    <a href="#" class=" block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                         id="user-menu-item-0">Your Profile</a>
                     <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                         id="user-menu-item-1">Settings</a>
@@ -86,16 +84,14 @@
 {{-- navigation Mobile --}}
 <div x-show="isOpenMobile" class="sm:hidden" id="mobile-menu">
     <div class="space-y-1 px-2 pb-3 pt-2">
-        <a href="#"
-            :class="{ 'bg-gray-900 text-white': isOn, 'text-gray-300 hover:bg-gray-700 hover:text-white': !isOn }"
-            class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+        <a href="#" class="{{ request()-> is('/') ? 'bg-indigo-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}} block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
             aria-current="page">Dashboard</a>
         <a href="#"
-            class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Blog</a>
+            class="{{ request()-> is('/blog') ? 'bg-indigo-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}} block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Blog</a>
         <a href="#"
-            class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+            class="{{ request()-> is('/about') ? 'bg-indigo-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}}  block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
         <a href="#"
-            class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
+            class="{{ request()-> is('/contact') ? 'bg-indigo-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}}  block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
     </div>
 </div>
 </nav>
