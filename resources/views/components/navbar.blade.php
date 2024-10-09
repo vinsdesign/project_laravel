@@ -27,13 +27,13 @@
             {{-- navigation full --}}
             <div class="hidden sm:ml-6 sm:block">
                 <div class="flex space-x-4">
-                    <a href="#"
+                    <a href="/"
                        class="{{ request()-> is('/') ? 'bg-indigo-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}} cursor-pointer block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="Home">Home</a>
-                    <a href="#"
+                    <a href="/blog"
                         class=" {{ request()-> is('/blog') ? 'bg-indigo-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}} rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 cursor-pointer hover:text-white">Blog</a>
-                    <a href="#"
+                    <a href="/about"
                         class="{{ request()-> is('/about') ? 'bg-indigo-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}} rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 cursor-pointer hover:text-white">About</a>
-                    <a href="#"
+                    <a href="/contact"
                         class="{{ request()-> is('/contact') ? 'bg-indigo-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}} rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 cursor-pointer hover:text-white">Contact</a>
                 </div>
             </div>
