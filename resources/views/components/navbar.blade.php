@@ -27,14 +27,10 @@
             {{-- navigation full --}}
             <div class="hidden sm:ml-6 sm:block">
                 <div class="flex space-x-4">
-                    <a href="/"
-                       class="{{ request()-> is('/') ? 'bg-indigo-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}} cursor-pointer block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="Home">Home</a>
-                    <a href="/blog"
-                        class=" {{ request()-> is('/blog') ? 'bg-indigo-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}} rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 cursor-pointer hover:text-white">Blog</a>
-                    <a href="/about"
-                        class="{{ request()-> is('/about') ? 'bg-indigo-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}} rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 cursor-pointer hover:text-white">About</a>
-                    <a href="/contact"
-                        class="{{ request()-> is('/contact') ? 'bg-indigo-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}} rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 cursor-pointer hover:text-white">Contact</a>
+                    <x-nav-link href='/' :active="request()->is('/')">Home</x-nav-link>
+                    <x-nav-link href='/blog' :active="request()->is('/blog')">Blog</x-nav-link>
+                    <x-nav-link href='/about' :active="request()->is('/about')">About</x-nav-link>
+                    <x-nav-link href='/contact' :active="request()->is('/contact')">Contact</x-nav-link>
                 </div>
             </div>
         </div>
@@ -84,14 +80,10 @@
 {{-- navigation Mobile --}}
 <div x-show="isOpenMobile" class="sm:hidden" id="mobile-menu">
     <div class="space-y-1 px-2 pb-3 pt-2">
-        <a href="#" class="{{ request()-> is('/') ? 'bg-indigo-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}} block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
-            aria-current="page">Dashboard</a>
-        <a href="#"
-            class="{{ request()-> is('/blog') ? 'bg-indigo-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}} block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Blog</a>
-        <a href="#"
-            class="{{ request()-> is('/about') ? 'bg-indigo-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}}  block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
-        <a href="#"
-            class="{{ request()-> is('/contact') ? 'bg-indigo-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}}  block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
+        <x-nav-link href='/' :active="request()->is('/')">Home</x-nav-link>
+        <x-nav-link href='/blog' :active="request()->is('/blog')">Blog</x-nav-link>
+        <x-nav-link href='/about' :active="request()->is('/about')">About</x-nav-link>
+        <x-nav-link href='/contact' :active="request()->is('/contact')">Contact</x-nav-link>
     </div>
 </div>
 </nav>
