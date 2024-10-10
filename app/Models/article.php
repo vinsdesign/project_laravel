@@ -45,7 +45,7 @@ class article
             ],
         ];
     }
-    public static function find($slug){
+    public static function find($slug):array {
         return Arr::first(static::all(), function($article) use ($slug){
             return $article['slug'] == $slug;
         });
