@@ -9,13 +9,13 @@
             </div>
             <div class=" relative">
                 <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                    <a href="/blog/{{ $article['id'] }}" class="hover:underline hover:text-indigo-500">
+                    <a href="/blog/{{ $article['slug'] }}" class="hover:underline hover:text-indigo-500">
                         <span class="absolute inset-0"></span>
                         {{ $article['title'] }}
                     </a>
                 </h3>
                 <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{{ $article['description'] }}</p>
-                <a href="/blog/{{ $article['id'] }}" class="hover:underline hover:text-indigo-500 text-sm">
+                <a href="/blog/{{ $article['slug'] }}" class="hover:underline hover:text-indigo-500 text-sm">
                     <span class="absolute inset-0"></span>
                     Read More 
                 </a>

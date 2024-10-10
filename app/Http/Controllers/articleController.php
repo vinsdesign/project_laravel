@@ -12,6 +12,7 @@ class articleController extends Controller
         $articles = [
             [
                 'id' => '1',
+                'slug'=> 'article-1',
                 'title' => 'Boost your conversion rate',
                 'category' => 'Marketing',
                 'date' => '2020-03-16',
@@ -22,6 +23,7 @@ class articleController extends Controller
             ],
             [
                 'id' => '2',
+                'slug'=> 'article-2',
                 'title' => 'How to use social media effectively',
                 'category' => 'Social Media',
                 'date' => '2021-05-20',
@@ -32,6 +34,7 @@ class articleController extends Controller
             ],
             [
                 'id' => '3',
+                'slug'=> 'article-3',
                 'title' => 'How to learn Laravel 11',
                 'category' => 'Programmer',
                 'date' => '2024-10-11',
@@ -45,10 +48,11 @@ class articleController extends Controller
         // Mengirimkan data articles ke view blog.blade.php
         return view('blog', ['articles'=> $articles]);
     }
-    public function show($id){
+    public function show($slug){
         $articles = [
             [
                 'id' => '1',
+                'slug'=> 'article-1',
                 'title' => 'Boost your conversion rate',
                 'category' => 'Marketing',
                 'date' => '2020-03-16',
@@ -59,6 +63,7 @@ class articleController extends Controller
             ],
             [
                 'id' => '2',
+                'slug'=> 'article-2',
                 'title' => 'How to use social media effectively',
                 'category' => 'Social Media',
                 'date' => '2021-05-20',
@@ -69,6 +74,7 @@ class articleController extends Controller
             ],
             [
                 'id' => '3',
+                'slug'=> 'article-3',
                 'title' => 'How to learn Laravel 11',
                 'category' => 'Programmer',
                 'date' => '2024-10-11',
@@ -78,8 +84,8 @@ class articleController extends Controller
                 'image' => 'https://plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             ],
         ];
-        $article = Arr::first($articles, function($article) use ($id){
-            return $article['id'] == $id;
+        $article = Arr::first($articles, function($article) use ($slug){
+            return $article['slug'] == $slug;
         });
         // Mengirimkan data articles ke view blog-article.blade.php
         return view('article-detail', ['title'=> 'Single Article', 'article'=> $article]);
