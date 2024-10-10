@@ -3,7 +3,7 @@
     @foreach($teams as $team)
     <li>
         <div class="flex items-center gap-x-6">
-            <img class="h-16 w-16 rounded-full"
+            <img class="h-16 w-16 rounded-full  object-cover"
                 src="{{ $team['image'] }}"
                 alt="">
             <div>
