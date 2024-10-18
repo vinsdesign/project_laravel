@@ -16,8 +16,7 @@ Route::get('/blog', function(){
     return view('blog',['articles'=>article::all()]);
 });
 
-Route::get('/blog/{slug}', function($slug) {
-    $article = article::find($slug);
+Route::get('/blog/{article:slug}', function(article $article) {
     return view('article-detail', ['title'=> 'Single Article', 'article'=> $article]);
 });
 
