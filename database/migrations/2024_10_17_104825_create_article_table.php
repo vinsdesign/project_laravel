@@ -18,7 +18,9 @@ return new class extends Migration
             $table->string('category');
             $table->date('date');
             $table->string('description');
-            $table->string('author');
+            $table->foreignId('author_id')->constrained(
+                table: 'users', indexName: 'article_author_id'
+            );
             $table->string('role');
             $table->string('image');
             $table->timestamps();

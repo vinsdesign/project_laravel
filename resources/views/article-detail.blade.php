@@ -18,13 +18,13 @@
                         </a>
                     </div>
                     <div class="relative mt-8 flex items-center gap-x-4">
-                        <img src="{{ $article['image'] }}" alt=""
+                        <img src="https://cdn.britannica.com/77/142177-050-4E8010A9/Albert-Einstein-1947.jpg" alt=""
                             class="h-10 w-10 object-cover rounded-full bg-gray-50">
                         <div class="text-sm leading-6">
                             <p class="font-semibold text-gray-900">
                                 <a href="#">
                                     <span class="absolute inset-0"></span>
-                                    {{ $article['author'] }}
+                                    {{ $article->author->name }}
                                 </a>
                             </p>
                             <p class="text-gray-600">{{ $article['role'] }}</p>

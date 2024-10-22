@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class article extends Model
 {
@@ -14,8 +15,12 @@ class article extends Model
         'category',
         'date',
         'description',
-        'author',
+        'author_id',
         'role',
         'image'
     ];
+    public function author(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }
