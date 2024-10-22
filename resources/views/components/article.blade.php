@@ -8,7 +8,7 @@
                 <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">{{ $article['category'] }}</a>
             </div>
             <div class=" relative">
-                <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900">
                     <a href="/blog/{{ $article['slug'] }}" class="hover:underline hover:text-indigo-500">
                         <span class="absolute inset-0"></span>
                         {{ $article['title'] }}
@@ -24,8 +24,8 @@
                 <img src="https://cdn.britannica.com/77/142177-050-4E8010A9/Albert-Einstein-1947.jpg" alt="" class="h-10 w-10 object-cover rounded-full bg-gray-50">
                 <div class="text-sm leading-6">
                     <p class="font-semibold text-gray-900">
-                        <a href="#">
-                            <span class="absolute inset-0"></span>
+                        <a class="hover:text-blue-500" href="/author/{{ $article->author->id }}">
+                            <span class="absolute inset-0 "></span>
                             {{ $article->author->name }}
                         </a>
                     </p>
