@@ -16,6 +16,7 @@ class article extends Model
         'date',
         'description',
         'author_id',
+        'category_id',
         'role',
         'image'
     ];
@@ -23,4 +24,9 @@ class article extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function Category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
+    }
+
 }

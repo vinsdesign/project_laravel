@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -24,9 +25,11 @@ class ArticleFactory extends Factory
             'category'=> fake()->word(),
             'date'=> fake()->date(),
             'description'=> fake()->paragraph(2),
-            'author_id'=> User::factory(),
             'role'=>fake()->sentence(2),
-            'image'=> fake()->imageUrl(360, 360, 'animals',true)
+            'image'=> fake()->imageUrl(360, 360, 'animals',true),
+            'author_id'=> User::factory(),
+            'category_id'=> Category::factory()
+
         ];
     }
 }
