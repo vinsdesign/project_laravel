@@ -17,20 +17,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $admin = User::create([
-            'name'  => 'Kylian Saputra',
-            'username' => 'KylianSaputra',
-            'email' => 'kyliansaputra@gmail.com',
-            'email_verified_at' => now(),
-            'password' => Hash::make('password'),
-            'remember_token' => Str::random(10)
-
-        ]);
-
+        $this->call([CategorySeeder::class, UserSeeder::class]);
         article::factory(50)->recycle(
-            user::factory(10)->create(),
-            $admin,   
-            Category::factory(5)->create(),
+            Category::all(),
+            User::all()
         )->create();
      }
 }
