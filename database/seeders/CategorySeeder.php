@@ -15,15 +15,18 @@ class CategorySeeder extends Seeder
     {
         Category::create([
             'name'=>'Web Programming',
-            'slug'=> 'category-web-programming'
+            'slug'=> 'category-web-programming',
+            'color'=>'red'
         ]);
         Category::create([
             'name'=>'Backend',
-            'slug'=> 'category-backend'
+            'slug'=> 'category-backend',
+            'color'=>'blue'
         ]);
         Category::create([
             'name'=>'Laravel 11',
-            'slug'=> 'category-laravel-11'
+            'slug'=> 'category-laravel-11',
+            'color'=>'green'
         ]);
         
     }
